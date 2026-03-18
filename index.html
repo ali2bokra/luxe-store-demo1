@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUXE Store Ultra-Premium</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+<h1>LUXE</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Shop</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+<div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="hero">
+<div class="hero-content">
+<h2>Luxury Fashion & Lifestyle</h2>
+<p>Premium style crafted for modern people</p>
+<a href="#products"><button class="cta-btn">Shop Now</button></a>
+</div>
+</section>
+
+<!-- Products -->
+<section id="products" class="products">
+<h2>Shop Collection</h2>
+
+<div class="categories">
+<button onclick="filterProducts('all')">All</button>
+<button onclick="filterProducts('men')">Men</button>
+<button onclick="filterProducts('women')">Women</button>
+<button onclick="filterProducts('shoes')">Shoes</button>
+<button onclick="filterProducts('accessories')">Accessories</button>
+<button onclick="filterProducts('electronics')">Electronics</button>
+</div>
+
+<div class="product-grid">
+
+<!-- Men Products -->
+<div class="product men" data-colors="black,blue" data-sizes="S,M,L">
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+<h3 onclick="openProduct('Men Jacket','$120', this.parentElement)">Men Jacket</h3>
+<p>$120</p>
+<button onclick="addToCart('Men Jacket','$120', this.parentElement)">Add to Cart</button>
+</div>
+
+<div class="product men" data-colors="red,grey" data-sizes="M,L,XL">
+<img src="https://images.unsplash.com/photo-1516826957135-700dedea698c">
+<h3 onclick="openProduct('Men Shirt','$90', this.parentElement)">Men Shirt</h3>
+<p>$90</p>
+<button onclick="addToCart('Men Shirt','$90', this.parentElement)">Add to Cart</button>
+</div>
+
+<!-- Women Products -->
+<div class="product women" data-colors="red,blue" data-sizes="S,M,L">
+<img src="https://images.unsplash.com/photo-1520975698519-59cbbd6c99d6">
+<h3 onclick="openProduct('Women Dress','$150', this.parentElement)">Women Dress</h3>
+<p>$150</p>
+<button onclick="addToCart('Women Dress','$150', this.parentElement)">Add to Cart</button>
+</div>
+
+<div class="product women" data-colors="pink,white" data-sizes="S,M">
+<img src="https://images.unsplash.com/photo-1520975700252-abcdbb6b3df4">
+<h3 onclick="openProduct('Women Top','$80', this.parentElement)">Women Top</h3>
+<p>$80</p>
+<button onclick="addToCart('Women Top','$80', this.parentElement)">Add to Cart</button>
+</div>
+
+<!-- Shoes -->
+<div class="product shoes" data-colors="black,white" data-sizes="39,40,41,42">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+<h3 onclick="openProduct('Sneakers','$180', this.parentElement)">Sneakers</h3>
+<p>$180</p>
+<button onclick="addToCart('Sneakers','$180', this.parentElement)">Add to Cart</button>
+</div>
+
+<!-- Accessories -->
+<div class="product accessories" data-colors="gold,silver" data-sizes="One Size">
+<img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7">
+<h3 onclick="openProduct('Watch','$200', this.parentElement)">Watch</h3>
+<p>$200</p>
+<button onclick="addToCart('Watch','$200', this.parentElement)">Add to Cart</button>
+</div>
+
+<!-- Electronics -->
+<div class="product electronics" data-colors="black" data-sizes="One Size">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+<h3 onclick="openProduct('Headphones','$120', this.parentElement)">Headphones</h3>
+<p>$120</p>
+<button onclick="addToCart('Headphones','$120', this.parentElement)">Add to Cart</button>
+</div>
+
+</div>
+</section>
+
+<!-- About -->
+<section id="about" class="about">
+<h2>About Us</h2>
+<p>We create premium fashion & lifestyle experiences with style, comfort, and modern design. Replace placeholder text and images for your client easily.</p>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<p>Email: contact@luxe.com</p>
+<p>Phone: +92 300 1234567</p>
+</section>
+
+<!-- Footer -->
+<footer>
+<p>© 2026 LUXE Store</p>
+</footer>
+
+<!-- Cart Sidebar -->
+<div id="cart-sidebar" class="cart-sidebar">
+<h2>Your Cart</h2>
+<ul id="cart-items"></ul>
+<p>Total Items: <span id="cart-total">0</span></p>
+<button onclick="toggleCart()">Close</button>
+</div>
+
+<!-- Product Popup -->
+<div id="product-popup" class="popup">
+<div class="popup-content">
+<h2 id="popup-title"></h2>
+<p id="popup-price"></p>
+<div id="popup-colors"></div>
+<div id="popup-sizes"></div>
+<button onclick="orderWhatsAppPopup()">Order via WhatsApp</button>
+<button onclick="closePopup()">Close</button>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
